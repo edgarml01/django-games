@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Consolas{% endblock %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-Persona">
+    <div style="display: flex; align-items: center;">
+        <h2>Información del videjuego</h2>
+    </div>
+    <form method="post" action="" style="text-align: left;">
+        {% csrf_token %}
+        <label for="nombre">Nombre:</label>    
+        {{ form.nombre }}
+        <label for="genero">Genero:</label>
+        {{ form.genero}}
+        <label for="consola">Consola:</label>
+        {{ form.modelo }}
+        <label for="fecha_lanzamiento">Fecha de lanzamiento:</label>
+        {{ form.fecha_lanzamiento }}
+        <label for="descripcion">Descripción:</label>
+        {{ form.descripcion }}
+        <button class="btn btn-primary mt-3" type="submit"><i class="bi bi-floppy-fill"></i> Guardar cambios</button>
+    </form>
+</div>
+
+{% endblock %}

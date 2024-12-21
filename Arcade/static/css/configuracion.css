@@ -1,0 +1,10 @@
+.form-label {
+    font-weight: bold;
+    text-align: right;
+    margin-right: 10px; /* Espaciado entre label e input */
+    min-width: 150px; /* Ancho mínimo para alinear los labels */
+}
+.d-flex {
+    display: flex;
+    align-items: center;
+}

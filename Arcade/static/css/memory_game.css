@@ -1,0 +1,30 @@
+.memory-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#memory-grid {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.grid-square {
+    width: 50px;
+    height: 50px;
+    
+    border: 1px solid #333;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.grid-square.active {
+    background-color: #044706;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+}

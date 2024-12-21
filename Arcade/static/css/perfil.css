@@ -1,0 +1,49 @@
+/* Estilo para el contenedor de perfil */
+.container-Perfil {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+.foto-perfil {
+    width: 100px; /* Ancho de la imagen */
+    height: 100px; /* Alto de la imagen */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-radius: 50%; /* Redondea la imagen para que sea circular */
+    border: 2px solid #333; /* Borde alrededor de la imagen */
+}
+
+.container-Perfil h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+.container-Historial{
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+/* Estilo para el contenedor de datos personales */
+.container-Persona {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.container-Persona h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.container-Persona h4 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #555;
+}

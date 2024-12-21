@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Adventure{% endblock %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/Adventure.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="game-container">
+    <div class="map">
+        <div class="character" id="character"></div>
+    </div>
+</div>
+<p class="text-center">Usa las teclas <strong>WASD</strong> o las <strong>Flechas</strong> para mover al personaje.</p>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/Adventure.js' %}"></script>
+{% endblock %}
+

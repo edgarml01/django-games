@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Juego de Memoria{% endblock %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/memory_game.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="memory-game-container text-center">
+    <h1 class="text-center">Juego de Memoria</h1>
+    <h2 class="text-center">Nivel: <span id="level">1</span></h2>
+    <h2 class="text-center">Puntaje: <span id="score">0</span></h2>
+    <div id="memory-grid"></div>
+    <h3 class="text-center">Tu turno: <span id="turn-status">Esperando</span></h3>
+    <button id="start-game" class="btn btn-primary mt-3">Iniciar Juego</button>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/memory_game.js' %}"></script>
+{% endblock %}

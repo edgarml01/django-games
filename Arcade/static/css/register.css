@@ -1,0 +1,120 @@
+/* Fondo de pantalla completo para el formulario de registro */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", system-ui, sans-serif;
+    background: linear-gradient(135deg, #6c5ce7, #74b9ff);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor del formulario de registro */
+.container-register {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Header del formulario */
+.container-register h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #2d3436;
+}
+
+/* Botón principal */
+button {
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #74b9ff;
+}
+
+/* Estilo para los campos de formulario */
+.form-control {
+    border-radius: 30px;
+    padding: 10px 15px;
+    height: 45px;
+    border: 1px solid #dfe6e9;
+    font-size: 1rem;
+    box-shadow: none;
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Estilo para campos activos o en foco */
+.form-control:focus {
+    border-color: #74b9ff;
+    box-shadow: 0 0 5px #74b9ff;
+}
+
+/* Contenedor para input-group */
+.input-group {
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para los elementos de input-group */
+.input-group-text {
+    background-color: #e9ecef;
+    border: none;
+    font-size: 1.2rem;
+    color: #636e72;
+    cursor: pointer;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-group-text:hover {
+    color: #2d3436;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Cambiar color al interactuar con input-group */
+.input-group:focus-within {
+    border-color: #74b9ff;
+    box-shadow: 0 0 5px #74b9ff;
+}
+
+/* Estilo para íconos dentro del input-group */
+.bi-eye, .bi-eye-slash {
+    font-size: 1.2rem;
+    color: #636e72;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.bi-eye:hover, .bi-eye-slash:hover {
+    color: #2d3436;
+}
+
+/* Espaciado consistente entre campos */
+.mb-3 {
+    margin-bottom: 1.5rem !important;
+}

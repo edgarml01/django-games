@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+
+{% block title %}Configuración de Cuenta{% endblock %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/configuracion.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 >Configuración de Cuenta</h1>
+    
+        <!-- Formulario para editar datos personales -->
+        <div class="container">
+            <h3>Editar Información Personal</h3>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {% if persona.foto_perfil %}
+                        <img 
+                            src="{{ persona.foto_perfil.url }}" 
+                            class="img-fluid rounded-circle mb-3" 
+                            alt="Foto de Perfil" 
+                            style="width: 100px; height: 100px;">
+                    {% else %}
+                        <img 
+                            src="{% static 'images/Perfil.jpg' %}" 
+                            class="img-fluid rounded-circle mb-3" 
+                            alt="Foto Predeterminada" 
+                            style="width: 100px; height: 100px;">
+                    {% endif %}
+                    <input 
+                        type="file" 
+                        class="form-control" 
+                        id="foto_perfil" 
+                        name="foto_perfil">
+                </div>
+
+
+                <div class="mb-3 d-flex">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="nombre" 
+                        name="nombre" 
+                        value="{{ persona.nombre|default:'' }}" 
+                        placeholder="Ingrese su nombre"
+                        >
+                </div>
+                <div class="mb-3 d-flex">
+                    <label for="ap_paterno" class="form-label">Apellido Paterno</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="ap_paterno" 
+                        name="ap_paterno" 
+                        value="{{ persona.ap_paterno|default:'' }}" 
+                        placeholder="Ingrese su apellido paterno"
+                        >
+                </div>
+                <div class="mb-3 d-flex">
+                    <label for="ap_materno" class="form-label">Apellido Materno</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="ap_materno" 
+                        name="ap_materno" 
+                        value="{{ persona.ap_materno|default:'' }}" 
+                        placeholder="Ingrese su apellido materno"
+                        >
+                </div>
+                <div class="mb-3 d-flex">
+                    <label for="correo" class="form-label">Correo Electrónico</label>
+                    <input 
+                        type="email" 
+                        class="form-control" 
+                        id="correo" 
+                        name="correo" 
+                        value="{{ persona.correo|default:'' }}" 
+                        placeholder="Ingrese su correo electrónico"
+                        >
+                </div>
+
+                <div class="mb-3 d-flex">
+                    <label for="ap_materno" class="form-label">Domicilio</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="domicilio" 
+                        name="domicilio" 
+                        value="{{ persona.domicilio|default:'' }}" 
+                        placeholder="Ingrese su apellido materno"
+                        >
+                </div>
+
+
+
+                <div class="mb-3 d-flex">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="telefono" 
+                        name="telefono" 
+                        value="{{ persona.telefono|default:'' }}" 
+                        placeholder="Ingrese su número de teléfono">
+                </div>
+
+
+                <div class="mb-3 d-flex">
+                    <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+                    <input 
+                        type="date" 
+                        class="form-control" 
+                        id="fecha_nacimiento" 
+                        name="fecha_nacimiento" 
+                        value="{{ persona.fecha_nacimiento|date:'Y-m-d' }}" 
+                        placeholder="Seleccione su fecha de nacimiento">
+                </div>
+
+
+
+                <button type="submit" class="btn btn-primary">Guardar Cambios Persoanles</button>
+            </form>
+        </div>
+        <hr>
+        <!-- Formulario para editar Usuario -->
+        <div class="container-User">
+            <h3>Editar Información de Usuario</h3>
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3 d-flex">
+                    <label for="username" class="form-label">Nombre de Usuario</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="username" 
+                        name="username" 
+                        value="{{ user.username }}" 
+                        placeholder="Ingrese su nombre de usuario">
+                </div>
+                <div class="mb-3 d-flex">
+                    <label for="password" class="form-label">Contraseña Actual </label>
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="password-actual" 
+                        name="password-actual" 
+                        placeholder="Ingrese su contraseña actual">
+                </div>
+                <div class="mb-3 d-flex">
+                    <label for="password" class="form-label">Contraseña Nueva </label>
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="password-new" 
+                        name="password-new" 
+                        placeholder="Ingrese su contraseña nueva">
+                </div>
+                <div class="mb-3 d-flex">
+                    <label for="password" class="form-label">Contraseña Confirmar </label>
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="password-confirm" 
+                        name="password-confirm" 
+                        placeholder="Confirme su contraseña">
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar Cambios de Usuario</button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+                    <i class="bi bi-trash"></i> Eliminar Cuenta
+                </button>
+                
+            </form> 
+
+
+        </div>
+        <br>
+   
+
+
+ {% include "modals/eliminar_cuenta_modal.html" %}
+
+
+    
+</div>
+{% endblock %}
+
+{% block js %}
+
+<script >src="{% static 'js/eliminar_cuenta_modal.js' %}" </script>
+{% endblock %}

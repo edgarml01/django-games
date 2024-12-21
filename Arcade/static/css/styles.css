@@ -1,0 +1,117 @@
+/* Reseteo de márgenes y paddings global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que padding y bordes no afecten las dimensiones */
+}
+
+/* Estilo General para el body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla */
+    display: flex;
+    flex-direction: column; /* Permite estructurar header, main y footer */
+}
+
+/* Header */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    flex-shrink: 0; /* Asegura que no colapse al ser flexbox */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Asegura un círculo perfecto */
+    border: 2px solid #f9f9f9;
+    object-fit: cover; /* Ajusta el contenido de la imagen */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* Estilo del menú desplegable */
+
+
+/* Estilo de los enlaces del menú */
+.dropdown-menu a {
+    color: rgb(0, 0, 0); /* Color del texto */
+    background-color: transparent; /* Fondo transparente por defecto */
+    padding: 8px 12px; /* Espaciado interno de cada enlace */
+    display: block; /* Asegura que el área sea clicable */
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Hover sobre los enlaces */
+.dropdown-menu a:hover {
+    background-color: #555; /* Color al pasar el cursor */
+    color: #f9f9f9; /* Color del texto al pasar el cursor */
+    border-radius: 4px; /* Opcional: Esquinas redondeadas al hover */
+}
+
+/* Espaciado entre los enlaces */
+.dropdown-menu li {
+    margin-bottom: 5px;
+}
+
+/* Elimina el margen inferior del último elemento */
+.dropdown-menu li:last-child {
+    margin-bottom: 0;
+}
+
+
+
+
+/* Main */
+.main {
+    flex: 1; /* Ocupa todo el espacio restante entre header y footer */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    flex-shrink: 0; /* Evita que el footer colapse */
+}

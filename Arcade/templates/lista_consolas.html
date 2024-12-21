@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Consolas{% endblock %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-Persona">
+    <div style="display: flex; align-items: center;">
+        <h2>Lista de consolas disponibles</h2>
+        <a href="{% url 'crear_consola'%}" class="btn btn-primary" style="margin-left: 150px;"><i class="bi bi-plus-circle"></i> Nueva</a>
+    </div>
+    {% if consolas%}
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endif %}  
+    <div style="max-height: 300px; overflow-y: auto;">
+    
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Fecha de lanzamiento</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if  consolas %}
+                {% for c in  consolas %}
+                    <tr>
+                        <td>{{c.nombre}}</td>
+                        <td>{{c.marca}}</td>
+                        <td>{{c.modelo}}</td>
+                        <td>15 DE SEPTIEMBRE DEL 2002</td>
+                        <td>
+                            <a href="{% url 'editar_consola' c.id  %}" class="btn btn-primary">Ver/Editar</a>
+                            <a href="{% url 'eliminar_consola' c.id  %}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                
+                {% else %}
+                  <tr>
+                    <td colspan="5">No hay consolas registradas</td>
+                </tr>
+                
+                {% endif %}
+                
+            </tbody>
+        </table>
+    
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Dinosaur Run{% endblock %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/dinosaur_run.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="game-container">
+    <div id="game">
+        <div id="dino"></div>
+        <div id="cactus"></div>
+    </div>
+    <h2 class="score">
+        Puntaje: <span id="score">0</span>  
+        Tiempo Jugado: <span id="time">0</span> segundos
+    </h2>
+    <p class="text-center">Usa la tecla <strong>W</strong> o la <strong>Flecha Arriba ↑</strong> para mover al dinosaurio.</p>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/dinosaur_run.js' %}"></script>
+{% endblock %}
