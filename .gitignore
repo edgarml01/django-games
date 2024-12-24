@@ -1,12 +1,15 @@
 # Entorno virtual
 venv/
 venv
+env
 # Archivos de Python
 *.pyc
 __pycache__/
 __pycache__
 # Archivos de entorno
 .env
+GameLab/settings.py
+manage.py
 
 # Archivos del sistema operativo
 .DS_Store

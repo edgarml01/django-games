@@ -16,16 +16,10 @@ Sigue estos pasos para configurar y ejecutar el proyecto localmente.
 
 ### 1. Clonar el repositorio
 
-Primero, clona el repositorio desde GitHub:
-
-```bash
-https://github.com/byChino/Curso_Django.git
-cd Curso_Django
-```
 ### 2. Crear el entorno virtual
 ```bash
 python -m venv venv
-venv/scripts/activate
+venv/scripts/activate.bat
 ```
 ### 3. Instalar las dependencias
 ```bash
